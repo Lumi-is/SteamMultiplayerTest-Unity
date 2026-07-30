@@ -91,8 +91,9 @@ namespace Steam.Multiplayer
         {
             if(NetworkServer.active)
             {
-                Debug.Log("Already in a lobby as a host. Ignoring join request...");
-                return;
+                //Debug.Log("Already in a lobby as a host. Ignoring join request...");
+
+                // If player tries to join from another place with the same steam account??? needs fixing
             }
 
             lobbyID = callback.m_ulSteamIDLobby;
