@@ -93,8 +93,12 @@ namespace Steam.Multiplayer
         public void RegisterPlayer(PlayerLobbyHandler player)
         {
             player.transform.SetParent(playerListParent, false); // TODO
-            player.transform.position -= new Vector3(0, player.connectionToClient.connectionId * 10,0);
 
+            if(player.connectionToClient.connectionId != 0)
+            {
+                player.transform.position -= new Vector3(0, player.connectionToClient.connectionId * 25,0);
+            }
+            
             Debug.Log("ConnectionID is "+player.connectionToClient.connectionId);
 
 
