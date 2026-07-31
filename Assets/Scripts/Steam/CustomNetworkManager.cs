@@ -3,16 +3,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Mirror;
 
-/*
-	Documentation: https://mirror-networking.gitbook.io/docs/components/network-manager
-	API Reference: https://mirror-networking.com/docs/api/Mirror.NetworkManager.html
-*/
-
 public class CustomNetworkManager : NetworkManager
 {
     // Overrides the base singleton so we don't
     // have to cast to this type everywhere.
     public static new CustomNetworkManager singleton => (CustomNetworkManager)NetworkManager.singleton;
+
+    public GameObject playerGameplayPrefab;
 
     /// <summary>
     /// Runs on both Server and Client
@@ -79,6 +76,11 @@ public class CustomNetworkManager : NetworkManager
     /// <param name="newSceneName"></param>
     public override void ServerChangeScene(string newSceneName)
     {
+        if(newSceneName == "GameplayScene")
+        {
+            playerPrefab = playerGameplayPrefab;
+            onlineScene = newSceneName;
+        }
         base.ServerChangeScene(newSceneName);
     }
 
