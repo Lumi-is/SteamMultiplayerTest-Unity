@@ -94,7 +94,7 @@ namespace Steam.Multiplayer
         {
             player.transform.SetParent(playerListParent, false); // TODO
 
-            Debug.Log("ConnectionID is "+player.connectionToServer);
+            Debug.Log("ConnectionID is "+player.connectionToClient.connectionId);
 
 
             UpdateClientsLobbyUI();
