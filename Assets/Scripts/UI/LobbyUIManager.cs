@@ -92,7 +92,7 @@ namespace Steam.Multiplayer
 
         public void RegisterPlayer(PlayerLobbyHandler player)
         {
-            player.transform.SetParent(playerListParent, false);
+            player.transform.SetParent(playerListParent, false); // TODO
             UpdateClientsLobbyUI();
         }
 
