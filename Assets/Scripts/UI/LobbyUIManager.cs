@@ -103,7 +103,7 @@ namespace Steam.Multiplayer
                 player.transform.position -= new Vector3(0, player.connectionToClient.connectionId * 25,0);
             }*/
             
-            Debug.Log("ConnectionID is "+player.connectionToClient.connectionId);
+            //Debug.Log("ConnectionID is "+player.connectionToClient.connectionId);
 
 
             UpdateClientsLobbyUI();
