@@ -5,6 +5,7 @@ using Mirror;
 using TMPro;
 using UnityEngine.UI;
 using Steamworks;
+using Mirror.Examples.Basic;
 
 
 namespace Steam.Multiplayer
@@ -40,6 +41,8 @@ namespace Steam.Multiplayer
 
         public void UpdateClientsLobbyUI()
         {
+
+            Debug.Log("Updating UI...");
             playerNameTexts.Clear();
             playerLobbyHandlers.Clear();
 
@@ -66,6 +69,7 @@ namespace Steam.Multiplayer
                     orderedMembers.Add(memberID);
                 }
             }
+
 
             int j = 0; 
             foreach (var member in orderedMembers)
@@ -94,10 +98,10 @@ namespace Steam.Multiplayer
         {
             player.transform.SetParent(playerListParent, false); // TODO
 
-            if(player.connectionToClient.connectionId != 0)
+            /*if(player.connectionToClient.connectionId != 0)
             {
                 player.transform.position -= new Vector3(0, player.connectionToClient.connectionId * 25,0);
-            }
+            }*/
             
             Debug.Log("ConnectionID is "+player.connectionToClient.connectionId);
 
