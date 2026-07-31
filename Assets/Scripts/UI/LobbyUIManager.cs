@@ -76,11 +76,11 @@ namespace Steam.Multiplayer
             {
                 TextMeshProUGUI txtMesh = playerListParent.GetChild(j).GetChild(0).GetComponent<TextMeshProUGUI>();
                 PlayerLobbyHandler playerLobbyHandler = playerListParent.GetChild(j).GetComponent<PlayerLobbyHandler>();
-                Transform playerTransform = playerListParent.GetChild(j).transform;
+                Transform pTransform = playerListParent.GetChild(j).transform;
 
                 playerLobbyHandlers.Add(playerLobbyHandler);
                 playerNameTexts.Add(txtMesh);
-                playerTransform.position -= new Vector3(0,playerLobbyHandler.connectionToClient.connectionId *30,0);
+                pTransform.position -= new Vector3(0,j *30,0);
 
                 string playerName = SteamFriends.GetFriendPersonaName(member);
                 playerNameTexts[j].text = playerName;
