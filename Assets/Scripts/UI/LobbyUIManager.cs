@@ -93,6 +93,10 @@ namespace Steam.Multiplayer
         public void RegisterPlayer(PlayerLobbyHandler player)
         {
             player.transform.SetParent(playerListParent, false); // TODO
+
+            Debug.Log("ConnectionID is "+player.connectionToServer);
+
+
             UpdateClientsLobbyUI();
         }
 
