@@ -87,9 +87,13 @@ namespace Player
             if(Input.GetKey(KeyCode.Space))
             {
                 isRagdoll = true;
+                rb.AddExplosionForce(5,new(),1);
+                rb.freezeRotation = false;
             } else
             {
                 isRagdoll = false;
+                transform.rotation = new();
+                rb.freezeRotation = true;
             }
         }
 
