@@ -428,7 +428,6 @@ GameObject:
   - component: {fileID: 8040045013643743720}
   - component: {fileID: 4077157493894607206}
   - component: {fileID: 7267086788603838476}
-  - component: {fileID: 1512708536387772453}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -649,40 +648,6 @@ MonoBehaviour:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
---- !u!114 &1512708536387772453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7393841926892538093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkTransformReliable
-  syncDirection: 1
-  syncMode: 0
-  syncInterval: 0
-  target: {fileID: 5278006799799717656}
-  syncPosition: 1
-  syncRotation: 1
-  syncScale: 0
-  onlySyncOnChange: 1
-  compressRotation: 1
-  interpolatePosition: 1
-  interpolateRotation: 1
-  interpolateScale: 1
-  coordinateSpace: 0
-  timelineOffset: 1
-  showGizmos: 0
-  showOverlay: 0
-  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  onlySyncOnChangeCorrectionMultiplier: 2
-  useFixedUpdate: 0
-  rotationSensitivity: 0.01
-  positionPrecision: 0.01
-  scalePrecision: 0.01
 --- !u!1 &7584709077536716557
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +660,7 @@ GameObject:
   - component: {fileID: 1317731695923736933}
   - component: {fileID: 5423239133085157297}
   - component: {fileID: 6138922286472565521}
+  - component: {fileID: 6288124604918697255}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -797,3 +763,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.49999994
   m_Center: {x: 0, y: 0.00000005960464, z: 0}
+--- !u!114 &6288124604918697255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7584709077536716557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkTransformReliable
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 3558627725748286440}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  onlySyncOnChangeCorrectionMultiplier: 2
+  useFixedUpdate: 0
+  rotationSensitivity: 0.01
+  positionPrecision: 0.01
+  scalePrecision: 0.01

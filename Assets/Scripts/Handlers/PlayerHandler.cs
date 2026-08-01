@@ -18,10 +18,10 @@ namespace Player
 
             foreach(PlayerHandler player in playerHandlers)
             {
-                if(player != this)
+                if(!isLocalPlayer)
                 {
                     childCamera.enabled = false;
-                } 
+                }
             }
 
             base.OnStartLocalPlayer();
