@@ -9,22 +9,19 @@ namespace Player
     public class PlayerHandler : NetworkBehaviour
     {
         public Camera childCamera;
-        List<PlayerHandler> playerHandlers = new();
-        public override void OnStartLocalPlayer()
+        public override void OnStartClient()
         {
-            playerHandlers.Clear();
-            playerHandlers = new(FindObjectsByType<PlayerHandler>());
-
-
-            foreach(PlayerHandler player in playerHandlers)
+            List<Camera> cameras = new(FindObjectsByType<Camera>());
+            
+            foreach(Camera camera in cameras)
             {
-                if(!isLocalPlayer)
+                if(camera != childCamera)
                 {
-                    childCamera.enabled = false;
+                    camera.enabled = false;
                 }
             }
-
-            base.OnStartLocalPlayer();
+            
+            base.OnStartClient();
         }
     }
 }
