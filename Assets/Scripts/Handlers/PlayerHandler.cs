@@ -11,14 +11,12 @@ namespace Player
         public Camera childCamera;
         public override void OnStartClient()
         {
-            List<Camera> cameras = new(FindObjectsByType<Camera>());
-            
-            foreach(Camera camera in cameras)
+            if(isLocalPlayer)
             {
-                if(camera != childCamera)
-                {
-                    camera.enabled = false;
-                }
+                childCamera.enabled = true;
+            } else
+            {
+                childCamera.enabled = false;
             }
             
             base.OnStartClient();
